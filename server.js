@@ -19,7 +19,7 @@ db.connect();
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
-const limit = 10;
+const limit = 35;
 
 //// // // // // // // // // // // // // // // ////   
 
@@ -61,8 +61,9 @@ app.get("/", async (req, res)=>{
 
         
         res.render("index.ejs", {
+            username: "Vaquero",
             totalCustomers,
-            customers: customersRes.rows,
+            customers: customerRes.rows,
             currentPage: page,
             totalPages,
             totalRevenue,
